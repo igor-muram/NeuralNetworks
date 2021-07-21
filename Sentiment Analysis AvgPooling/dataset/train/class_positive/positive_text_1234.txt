@@ -1,0 +1,1 @@
+ I was hoping I could just drop them into ~/.vim so both Vim and MacVim could share them
