@@ -4,11 +4,13 @@ Analysis of the emotional tone of texts from the social network Twitter using a 
 
 ## Parameters
 
-Binary cross-entropy is used as the loss function.<br>
-Accuracy, i.e. the proportion of correctly recognized sentences, is used as a metric for the quality of neural network performance.<br>
-The database of automatically collected texts from the English segment of the social network Twitter was used for training and testing the neural network.<br>
-The optimizer Adam is used to improve the quality of training.<br> 
-To achieve the best quality of neural network performance the hyperparameters of the model are selected on cross-validation.
+<ul>
+	<li>Binary cross-entropy is used as the loss function.</li>
+	<li>Accuracy, i.e. the proportion of correctly recognized sentences, is used as a metric for the quality of neural network performance.</li>
+	<li>The database of automatically collected texts from the English segment of the social network Twitter was used for training and testing the neural network.</li>
+	<li>The optimizer Adam is used to improve the quality of training.</li>
+	<li>To achieve the best quality of neural network performance the hyperparameters of the model are selected on cross-validation.</li>
+</ul>
 
 ## Techonogies
 
