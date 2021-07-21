@@ -2,11 +2,15 @@
 
 Analysis of the emotional tone of texts from the social network Twitter using a recurrent neural network LSTM.
 
+## Parameters
+
 Binary cross-entropy is used as the loss function.<br>
 Accuracy, i.e. the proportion of correctly recognized sentences, is used as a metric for the quality of neural network performance.<br>
 The database of automatically collected texts from the English segment of the social network Twitter was used for training and testing the neural network.<br>
 The optimizer Adam is used to improve the quality of training.<br> 
 To achieve the best quality of neural network performance the hyperparameters of the model are selected on cross-validation.
+
+## Techonogies
 
 <p>Libraries and tools used to make up the network:</p>
 
@@ -17,7 +21,10 @@ To achieve the best quality of neural network performance the hyperparameters of
   	<li>Keras Tuner (select the hyperparameters of the model on cross validation)</li>
 </ul>
 
-Structure of a neural network:<br>
+## Structure
+
+Structure of a neural network:
+
 <ul>
 	<li>Embedding layer with 96 outputs.</li>
     	<li>LSTM layer of 96 neurons.</li>
@@ -27,14 +34,14 @@ Structure of a neural network:<br>
 </ul>
 
 
-Plots:
+## Plots
 
 ![image](https://user-images.githubusercontent.com/54866075/126515045-ce6d0518-e32e-43fa-bb5a-4d2579f086cf.png)      ![image](https://user-images.githubusercontent.com/54866075/126515061-83fcf78a-1297-458c-a73c-5f13ad285cc2.png)
 
-Loss and accuracy:<br>
+## Loss and accuracy
 
 ![image](https://user-images.githubusercontent.com/54866075/126515029-2fb2696d-430e-43c4-bff2-976c80d3bb8b.png)
 
-An example of the result of a neural network:
+## An example of the result of a neural network
 
 ![image](https://user-images.githubusercontent.com/54866075/126514154-f9629967-3066-44a2-a4b2-e37b5a2d9811.png)      ![image](https://user-images.githubusercontent.com/54866075/126515183-44411f52-5304-4c3d-be56-387a501ec431.png)
