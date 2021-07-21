@@ -12,7 +12,14 @@ To achieve the best quality of neural network performance the hyperparameters of
 
 <ul>
 	<li>Python</li>
-  <li>TensorFlow</li>
-  <li>Keras</li>
-  <li>Keras Tuner (select the hyperparameters of the model on cross validation)</li>
+  	<li>TensorFlow</li>
+  	<li>Keras</li>
+  	<li>Keras Tuner (select the hyperparameters of the model on cross validation)</li>
+</ul>
+
+Structure of a neural network:<br>
+<ul>
+	<li>Embedding layer.</li>
+  	<li>GlobalAveragePooling1D operation for weights obtained from the Embedding layer.</li>
+  	<li>Layer of full-connected network with 1 neuron and sigmoidal activation function, the output of which will be a value in the range from 0 to 1. This value will show how high the positive tone of the text is. If the obtained value is less than 0.5, we will consider the text negative, otherwise we will consider it positive.</li>
 </ul>
