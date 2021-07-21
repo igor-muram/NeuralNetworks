@@ -180,3 +180,5 @@ plt.ylabel('accuracy')
 plt.xlabel('epoch')
 plt.legend()
 plt.show()
+
+model.save('model')
