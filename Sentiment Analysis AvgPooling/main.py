@@ -1,5 +1,4 @@
 import os
-
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 import re
@@ -14,10 +13,13 @@ from tensorflow.keras.layers.experimental.preprocessing import TextVectorization
 
 import kerastuner as kt
 
-print(tf.__version__)
-
 batch_size = 32
 seed = 42
+
+raw_test_ds = tf.keras.preprocessing.text_dataset_from_directory(
+    'dataset/test', 
+    batch_size=batch_size)
+
 
 raw_train_ds = tf.keras.preprocessing.text_dataset_from_directory(
     'dataset/train', 
@@ -33,17 +35,13 @@ raw_val_ds = tf.keras.preprocessing.text_dataset_from_directory(
     subset='validation', 
     seed=seed)
 
-raw_test_ds = tf.keras.preprocessing.text_dataset_from_directory(
-    'dataset/test', 
-    batch_size=batch_size)
-
 def custom_standardization(input_data):
   lowercase = tf.strings.lower(input_data)
   stripped_html = tf.strings.regex_replace(lowercase, '<br />', ' ')
   return tf.strings.regex_replace(stripped_html, '[%s]' % re.escape(string.punctuation), '')
- 
-max_features = 100000
-sequence_length = 250
+
+max_features = 100000 # max word count
+sequence_length = 250 # max string length
 
 vectorize_layer = TextVectorization(
     standardize=custom_standardization,
@@ -63,11 +61,10 @@ val_ds = raw_val_ds.map(vectorize_text)
 test_ds = raw_test_ds.map(vectorize_text)
 
 AUTOTUNE = tf.data.AUTOTUNE
-
+ 
 train_ds = train_ds.cache().prefetch(buffer_size=AUTOTUNE)
 val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)
 test_ds = test_ds.cache().prefetch(buffer_size=AUTOTUNE)
-
 
 model = tf.keras.Sequential([
     layers.Embedding(max_features + 1, 144),
@@ -78,15 +75,16 @@ model = tf.keras.Sequential([
 
 initial_lr = 0.01
 
-model.compile(loss=losses.BinaryCrossentropy(from_logits=True), optimizer=keras.optimizers.Adam(initial_lr), metrics=tf.metrics.BinaryAccuracy(threshold=0.0))
-
+model.compile(loss=losses.BinaryCrossentropy(from_logits=True), 
+              optimizer=keras.optimizers.Adam(initial_lr), 
+              metrics=tf.metrics.BinaryAccuracy(threshold=0.0))
 
 history = model.fit(train_ds, validation_data=val_ds, epochs=3)
 
 loss, accuracy = model.evaluate(test_ds)
 
-print("Loss: ", loss)
-print("Accuracy: ", accuracy)
+print("loss: ", loss)
+print("accuracy: ", accuracy)
 
 history_dict = history.history
 history_dict.keys()
@@ -98,22 +96,18 @@ val_loss = history_dict['val_loss']
 
 epochs = range(1, len(acc) + 1)
 
-plt.plot(epochs, loss, label='Training loss')
-plt.plot(epochs, val_loss, label='Validation loss')
+plt.plot(epochs, loss, 'bo', label='Training loss')
+plt.plot(epochs, val_loss, 'b', label='Validation loss')
 plt.title('Training and validation loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
-
 plt.show()
-
-plt.plot(epochs, acc, label='Training acc')
-plt.plot(epochs, val_acc, label='Validation acc')
+ 
+plt.plot(epochs, acc, 'bo', label='Training acc')
+plt.plot(epochs, val_acc, 'b', label='Validation acc')
 plt.title('Training and validation accuracy')
 plt.xlabel('Epochs')
 plt.ylabel('Accuracy')
 plt.legend(loc='lower right')
-
 plt.show()
-
-model.save("model")
