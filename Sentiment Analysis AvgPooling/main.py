@@ -111,3 +111,5 @@ plt.xlabel('Epochs')
 plt.ylabel('Accuracy')
 plt.legend(loc='lower right')
 plt.show()
+
+model.save("model")
