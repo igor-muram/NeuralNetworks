@@ -1,0 +1,1 @@
+" You`re not the only one surprised that FreeTDS and UTF-8 don`t 'just work'. But you`ll get it right  eventually." "But you`ll get it right

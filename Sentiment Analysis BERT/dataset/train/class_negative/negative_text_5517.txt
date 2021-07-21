@@ -1,0 +1,1 @@
+" Problem is  Flash isnt GPU accelerated.  The Atom 330 can`t play Youtube HD or Hulu HD fullscreen   Big deal with Plex..."

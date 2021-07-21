@@ -1,0 +1,1 @@
+" I`m stuck in a try-to-merge-two-tools CSS hell  so no help from frameworks  Unless both tools had already used the same framework"
