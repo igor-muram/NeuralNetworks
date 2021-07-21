@@ -11,17 +11,30 @@ To achieve the best quality of neural network performance the hyperparameters of
 <p>Libraries and tools used to make up the network:</p>
 
 <ul>
-	  <li>Python</li>
-    <li>TensorFlow</li>
+	<li>Python</li>
+    	<li>TensorFlow</li>
   	<li>Keras</li>
   	<li>Keras Tuner (select the hyperparameters of the model on cross validation)</li>
 </ul>
 
 Structure of a neural network:<br>
 <ul>
-	  <li>Embedding layer with 96 outputs.</li>
-    <li>LSTM layer of 96 neurons.</li>
-    <li>LSTM layer of 48 neurons.</li>
-    <li>LSTM layer with 48 neurons.</li>
-    <li>Layer of full-connected network with 2 neurons and softmax activation function, the output of which will be a vector of two elements, the values of which will be in the range from 0 to 1. The value of the first element will show the probability that the phrase has a positive emotional tone, and the value of the second element will show the probability that the phrase has a negative emotional tone.</li>
+	<li>Embedding layer with 96 outputs.</li>
+    	<li>LSTM layer of 96 neurons.</li>
+    	<li>LSTM layer of 48 neurons.</li>
+    	<li>LSTM layer with 48 neurons.</li>
+    	<li>Layer of full-connected network with 2 neurons and softmax activation function, the output of which will be a vector of two elements, the values of which will be in the range from 0 to 1. The value of the first element will show the probability that the phrase has a positive emotional tone, and the value of the second element will show the probability that the phrase has a negative emotional tone.</li>
 </ul>
+
+
+Plots:
+
+![image](https://user-images.githubusercontent.com/54866075/126515045-ce6d0518-e32e-43fa-bb5a-4d2579f086cf.png)      ![image](https://user-images.githubusercontent.com/54866075/126515061-83fcf78a-1297-458c-a73c-5f13ad285cc2.png)
+
+Loss and accuracy:<br>
+
+![image](https://user-images.githubusercontent.com/54866075/126515029-2fb2696d-430e-43c4-bff2-976c80d3bb8b.png)
+
+An example of the result of a neural network:
+
+![image](https://user-images.githubusercontent.com/54866075/126514154-f9629967-3066-44a2-a4b2-e37b5a2d9811.png)      ![image](https://user-images.githubusercontent.com/54866075/126515183-44411f52-5304-4c3d-be56-387a501ec431.png)
