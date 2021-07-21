@@ -2,11 +2,15 @@
 
 Analysis of the emotional tone of texts from the social network Twitter using a bidirectional transformer BERT.
 
+## Parameters
+
 Binary cross-entropy is used as the loss function.<br>
 Accuracy, i.e. the proportion of correctly recognized sentences, is used as a metric for the quality of neural network performance.<br>
 The database of automatically collected texts from the English segment of the social network Twitter was used for training and testing the neural network.<br>
 The optimizer Adam is used to improve the quality of training.<br> 
 To achieve the best quality of neural network performance the hyperparameters of the model are selected on cross-validation.
+
+## Technologies
 
 <p>Libraries and tools used to make up the network:</p>
 
@@ -16,6 +20,8 @@ To achieve the best quality of neural network performance the hyperparameters of
   	<li>Keras</li>
   	<li>Keras Tuner (select the hyperparameters of the model on cross validation)</li>
 </ul>
+
+## Structure
 
 Structure of a neural network:
 
@@ -31,14 +37,14 @@ Structure of a neural network:
 </ul>
 
 
-Plots:
+## Plots
 
 ![image](https://user-images.githubusercontent.com/54866075/126515847-d09486e7-9234-4210-a442-790f12d94d27.png)
 
-Loss and accuracy:<br>
+## Loss and accuracy
 
 ![image](https://user-images.githubusercontent.com/54866075/126515923-5e9c8788-ee6f-46b1-b7d2-1b697839d4ae.png)
 
-An example of the result of a neural network:
+## An example of the result of a neural network
 
 ![image](https://user-images.githubusercontent.com/54866075/126515872-fbee9a65-b44d-466c-a6dd-aa2c141cc266.png)      ![image](https://user-images.githubusercontent.com/54866075/126515884-0f62b101-9557-4f93-a967-f8049530ff39.png)
