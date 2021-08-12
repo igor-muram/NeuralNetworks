@@ -4,37 +4,30 @@ Analysis of the emotional tone of texts from the social network Twitter using a 
 
 ## Parameters
 
-<ul>
-	<li>Binary cross-entropy is used as the loss function.</li>
-	<li>Accuracy, i.e. the proportion of correctly recognized sentences, is used as a metric for the quality of neural network performance.</li>
-	<li>The database of automatically collected texts from the English segment of the social network Twitter was used for training and testing the neural network.</li>
-	<li>The optimizer Adam is used to improve the quality of training.</li>
-	<li>To achieve the best quality of neural network performance the hyperparameters of the model are selected on cross-validation.</li>
-</ul>
+* Binary cross-entropy is used as the loss function.
+* Accuracy, i.e. the proportion of correctly recognized sentences, is used as a metric for the quality of neural network performance.
+* The database of automatically collected texts from the English segment of the social network Twitter was used for training and testing the neural network.
+* The optimizer Adam is used to improve the quality of training.
+* To achieve the best quality of neural network performance the hyperparameters of the model are selected on cross-validation.
 
 ## Technologies
 
-<p>Libraries and tools used to make up the network:</p>
+Libraries and tools used to make up the network:
 
-<ul>
-	<li>Python</li>
-    	<li>TensorFlow</li>
-  	<li>Keras</li>
-  	<li>Keras Tuner (select the hyperparameters of the model on cross validation)</li>
-</ul>
+* Python
+* TensorFlow
+* Keras
+* Keras Tuner (select the hyperparameters of the model on cross validation)
 
 ## Structure
 
 Structure of a neural network:
 
-<ul>
-	<li>Embedding layer with 128 outputs.</li>
-    	<li>GRU layer of 128 neurons.</li>
-    	<li>GRU layer of 32 neurons.</li>
-    	<li>GRU layer with 32 neurons.</li>
-    	<li>Layer of full-connected network with 2 neurons and softmax activation function, the output of which will be a vector of two elements whose values will be in the range from 0 to 1. The value of the first element will show the probability that the phrase has a positive emotional tone, and the value of the second element will show the probability that the phrase has a negative emotional tone.</li>
-</ul>
-
+* Embedding layer with 128 outputs.
+* GRU layer of 128 neurons.
+* GRU layer of 32 neurons.
+* GRU layer with 32 neurons.
+* Layer of full-connected network with 2 neurons and softmax activation function, the output of which will be a vector of two elements whose values will be in the range from 0 to 1. The value of the first element will show the probability that the phrase has a positive emotional tone, and the value of the second element will show the probability that the phrase has a negative emotional tone.
 
 ## Plots
 
