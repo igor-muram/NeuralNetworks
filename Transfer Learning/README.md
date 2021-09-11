@@ -31,5 +31,6 @@ Libraries and tools used to make up the network:
 
 Approaches used in development:
 
+* Transfer Learning
 * Fixed Feature Extractor
 * Fine Tuning
